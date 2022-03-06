@@ -5,6 +5,11 @@ name = "pypi"
 
 [packages]
 django = "==3.2.7"
+django-jazzmin = "*"
+django-3-jet = "*"
+google-api-python-client = "==1.4.1"
+django-adminlte3 = "*"
+django-matrix-field = "*"
 
 [dev-packages]
 black = "*"

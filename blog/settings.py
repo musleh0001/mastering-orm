@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -19,6 +20,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "jazzmin",  # installed app
+    # "jet.dashboard",
+    # "jet",
+    # "adminlte3",
+    # "adminlte3_theme",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -116,3 +122,46 @@ STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+JAZZMIN_SETTINGS = {
+    "show_ui_builder": True,
+    "site_title": "Mastering ORM",
+    "site_header": "ORM",
+    "site_brand": "Mastering ORM",
+    "site_icon": None,
+    "topmenu_links": [
+        # Url that gets reversed (Permissions can be added)
+        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+        # external url that opens in a new window (Permissions can be added)
+        {
+            "name": "Support",
+            "url": "https://github.com/musleh0001/mastering-orm",
+            "new_window": True,
+        },
+        # model admin to link to (Permissions checked against model)
+        {"model": "auth.User"},
+        # App with dropdown menu to all its models pages (Permissions checked against models)
+        {"app": "category"},
+        {"app": "post"},
+        {"app": "comments"},
+    ],
+}
+JAZZMIN_UI_TWEAKS = {
+    "theme": "flatly",
+    "dark_mode_theme": "darkly",
+}
+
+
+# JET_DEFAULT_THEME = "light-blue"
+# JET_THEMES = [
+#     {"theme": "default", "color": "#47bac1", "title": "Default"},
+#     {"theme": "green", "color": "#44b78b", "title": "Green"},
+#     {"theme": "light-green", "color": "#2faa60", "title": "Light Green"},
+#     {"theme": "light-violet", "color": "#a464c4", "title": "Light Violet"},
+#     {"theme": "light-blue", "color": "#5EADDE", "title": "Light Blue"},
+#     {"theme": "light-gray", "color": "#222", "title": "Light Gray"},
+# ]
+# JET_SIDE_MENU_COMPACT = True
+# JET_MODULE_GOOGLE_ANALYTICS_CLIENT_SECRETS_FILE = os.path.join(
+#     BASE_DIR, "client_secrets.json"
+# )
